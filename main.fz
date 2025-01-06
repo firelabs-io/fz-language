@@ -1,0 +1,8 @@
+loop:
+	sub ax, 2
+	jmc loop ax
+	ret
+main:
+	mov ax, 10
+	jmp loop
+	exit

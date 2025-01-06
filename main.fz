@@ -1,8 +1,16 @@
+even:
+	out even
+	exit 0
+	ret
 loop:
 	sub ax, 2
-	jmc loop ax
+	jmc loop, ax
+	jnc even, ax
+	out odd
+	exit 0
 	ret
 main:
-	mov ax, 10
+	in ax
 	jmp loop
-	exit
+	out ax
+	exit 0
